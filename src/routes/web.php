@@ -17,6 +17,8 @@ use App\Http\Controllers\RefundController;
 
 Route::get('/', [RefundController::class,'index']);
 Route::get('/refunds/create', [RefundController::class,'create']);
+Route::get('/refunds', [RefundController::class,'list']);
+Route::post('/refunds', [RefundController::class,'store']);
 
 Route::get('/inbox', function() {
     return view('inbox');
@@ -24,8 +26,4 @@ Route::get('/inbox', function() {
 
 Route::get('/refunds/request', function() {
     return view('refunds.request');
-});
-
-Route::get('/refunds/list', function() {
-    return view('refunds.list');
 });
