@@ -27,3 +27,6 @@ Route::get('/inbox', function() {
 Route::get('/refunds/request', function() {
     return view('refunds.request');
 });
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
