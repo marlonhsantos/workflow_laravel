@@ -13,9 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+use App\Http\Controllers\RefundController;
+
+Route::get('/', [RefundController::class,'index']);
+Route::get('/refunds/create', [RefundController::class,'create']);
 
 Route::get('/inbox', function() {
     return view('inbox');

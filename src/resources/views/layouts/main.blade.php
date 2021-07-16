@@ -14,7 +14,7 @@
 <div class="container bootstrap snippets bootdey">
     <div class="row">
         <div class="col-sm-3 col-md-2">
-            <a href="/refunds/request" class="btn btn-success btn-sm btn-block" role="button"><i class="glyphicon glyphicon-usd"></i> Solicitar Reembolso</a>
+            <a href="/refunds/create" class="btn btn-success btn-sm btn-block" role="button"><i class="glyphicon glyphicon-usd"></i> Solicitar Reembolso</a>
             <!--
             <div class="btn-group">
                 <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
