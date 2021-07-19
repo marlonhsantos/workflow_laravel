@@ -34,7 +34,8 @@ class RefundController extends Controller
         $post = new PostCaller(WorkflowController::class, 'store', Request::class,[
             'is_concluded' => 0,
             'is_deleted' => 0,
-            'refund_id' => $refund->id
+            'refund_id' => $refund->id,
+            'step_id' => 1
         ]);
 
         $post->call();

@@ -12,10 +12,15 @@ class Workflow extends Model
     protected $fillable = [
         'is_concluded',
         'is_deleted',
-        'refund_id'
+        'refund_id',
+        'step_id'
     ];
 
     public function refund() {
         return $this->belongsTo('App\Models\Refund');
+    }
+
+    public function step() {
+        return $this->belongsTo('App\Models\Step');
     }
 }
