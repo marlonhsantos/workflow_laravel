@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Refund extends Model
 {
     use HasFactory;
+
+    public function workflow() {
+        return $this->hasOne('App\Models\Workflow');
+    }
 }

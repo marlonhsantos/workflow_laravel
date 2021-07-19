@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 use App\Http\Controllers\RefundController;
+use App\Http\Controllers\WorkflowController;
 
 Route::get('/', [RefundController::class,'index']);
 Route::get('/refunds/create', [RefundController::class,'create']);
@@ -27,6 +28,7 @@ Route::get('/inbox', function() {
 Route::get('/refunds/request', function() {
     return view('refunds.request');
 });
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');

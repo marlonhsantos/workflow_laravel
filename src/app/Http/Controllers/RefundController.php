@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\PostCaller;
 use Illuminate\Http\Request;
 
 use App\Models\Refund;
+use App\Http\Controllers\WorkflowController;
 class RefundController extends Controller
 {
     public function index() {
@@ -30,6 +32,14 @@ class RefundController extends Controller
 
         $refund->save();
 
-        return redirect("/refunds");
+        $post = new PostCaller(WorkflowController::class, 'store', Request::class,[
+            'is_concluded' => 0,
+            'is_deleted' => 0,
+            'refund_id' => $refund->id
+        ]);
+
+        $post->call();
+
+        return $this->list();
     }
 }
