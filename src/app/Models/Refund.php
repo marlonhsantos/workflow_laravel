@@ -9,7 +9,7 @@ class Refund extends Model
 {
     use HasFactory;
 
-    public function workflow() {
+    public function workflows() {
         return $this->hasOne('App\Models\Workflow');
     }
 }

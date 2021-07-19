@@ -39,7 +39,9 @@ class WorkflowController extends Controller
      */
     public function show($id)
     {
-        $workflow = Workflow::where('id', $id)->get();
+        $workflow = Workflow::where('id', $id)
+            ->with('refund')
+            ->get();
         return response()->json($workflow, Response::HTTP_OK);
     }
 

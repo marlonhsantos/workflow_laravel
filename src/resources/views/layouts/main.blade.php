@@ -87,6 +87,8 @@
             </ul>
         </div>
         <div class="col-sm-9 col-md-10">
+        <h3>@yield('title')</h3>
+        <hr>
         @yield('content')
         </div>
     </div>

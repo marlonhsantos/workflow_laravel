@@ -3,7 +3,6 @@
 @section('title', 'Solicitar Reembolso')
 
 @section('content')
-<h2>Solicitar Reembolso</h2>
 <div id="refund-create-container" class="col-md-6 offset-md-3">
     <form action="/refunds" method="post">
     @csrf

@@ -14,20 +14,16 @@ use Illuminate\Support\Facades\Route;
 */
 
 use App\Http\Controllers\RefundController;
-use App\Http\Controllers\WorkflowController;
+use App\Http\Controllers\InboxController;
 
 Route::get('/', [RefundController::class,'index']);
 Route::get('/refunds/create', [RefundController::class,'create']);
 Route::get('/refunds', [RefundController::class,'list']);
 Route::post('/refunds', [RefundController::class,'store']);
 
-Route::get('/inbox', function() {
-    return view('inbox');
-});
+Route::get('/inbox', [InboxController::class, 'index']);
 
-Route::get('/refunds/request', function() {
-    return view('refunds.request');
-});
+Route::get('/workflow/{id}', [InboxController::class, 'workflow']);
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');

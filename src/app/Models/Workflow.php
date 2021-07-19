@@ -14,4 +14,8 @@ class Workflow extends Model
         'is_deleted',
         'refund_id'
     ];
+
+    public function refund() {
+        return $this->belongsTo('App\Models\Refund');
+    }
 }

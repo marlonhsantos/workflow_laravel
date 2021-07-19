@@ -18,36 +18,21 @@
             <div class="tab-content">
                 <div class="tab-pane fade in active" id="home">
                     <div class="list-group">
-                        <a href="#" class="list-group-item">
+@foreach($workflows as $workflow)
+                        <a href="/workflow/{{ $workflow->id }}" class="list-group-item">
+                            <!--
                             <div class="checkbox">
                                 <label>
                                     <input type="checkbox">
                                 </label>
                             </div>
-                            <span class="glyphicon glyphicon-star-empty"></span><span class="name label label-info" style="min-width: 120px;
-                                display: inline-block;">Andres posada</span> <span class="">Nice work on the lastest version</span>
-                            <span class="text-muted" style="font-size: 11px;">- More content here</span> <span class="badge">12:10 AM</span> <span class="pull-right"><span class="glyphicon glyphicon-paperclip">
-                            </span></span></a><a href="#" class="list-group-item">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox">
-                                    </label>
-                                </div>
-                                <span class="glyphicon glyphicon-star-empty"></span><span class="name  label label-success" style="min-width: 120px;
-                                    display: inline-block;">Juan acosta</span> <span class="">This is big title</span>
-                                <span class="text-muted" style="font-size: 11px;">- I saw that you had..</span> <span class="badge">12:09 AM</span> <span class="pull-right"><span class="glyphicon glyphicon-paperclip">
-                                    </span></span></a><a href="#" class="list-group-item read">
-                                        <div class="checkbox">
-                                            <label>
-                                                <input type="checkbox">
-                                            </label>
-                                        </div>
-                                        <span class="glyphicon glyphicon-star"></span><span class="name  label label-warning" style="min-width: 120px;
-                                            display: inline-block;">Mariana jaramillo</span> <span class="">This is big title</span>
-                                        <span class="text-muted" style="font-size: 11px;">- Hi hello how r u ?</span> <span class="badge">11:30 PM</span> <span class="pull-right"><span class="glyphicon glyphicon-paperclip">
-                                    </span>   
-                                </span>  
-                            </a>
+            -->             <span>#{{ $workflow->id }}</span>
+                            <span class="name label label-info" style="min-width: 120px;
+                                display: inline-block;">Aguardando Aprovação</span> <span class="">{{ $workflow->refund->requester_name }} - {{ number_format($workflow->refund->value, 2, ',', '.') }}</span>
+                            <span class="text-muted" style="font-size: 11px;">- {{ $workflow->refund->description }}</span> <span class="badge">{{ date('d/m/Y H:i:s', strtotime($workflow->created_at)) }}</span> <span class="pull-right">
+                            </span></span>
+                        </a>
+@endforeach
                     </div>
                 </div>
                 <div class="tab-pane fade in" id="profile">
