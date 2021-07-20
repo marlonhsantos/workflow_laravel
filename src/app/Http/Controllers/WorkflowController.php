@@ -41,6 +41,7 @@ class WorkflowController extends Controller
     {
         $workflow = Workflow::where('id', $id)
             ->with('refund')
+            ->with('step')
             ->get();
         return response()->json($workflow, Response::HTTP_OK);
     }

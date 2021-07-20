@@ -1,9 +1,8 @@
 @extends('layouts.main')
 
-@section('title', 'Solicitar Reembolso')
+@section('title', 'Solicitações de Reembolso')
 
 @section('content')
-<h2>Solicitações de Reembolso</h2>
     <div class="tab-pane" id="list">
         <div class="list-group">
 @foreach($refunds as $refund)

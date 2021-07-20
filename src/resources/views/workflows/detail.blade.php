@@ -27,7 +27,7 @@
         </div>
         <hr>
         <form method="post">
-            <input type="button" value="Aprovar" class="btn btn-primary" id="btn-aprovar">
+            <input type="button" value="Aprovar" class="btn btn-primary" id="btn-aprovar" data-next_step="">
             <input type="button" value="Reprovar" class="btn btn-danger" id="btn-reprovar">
         </form>
     </div>

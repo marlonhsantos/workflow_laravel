@@ -4,15 +4,11 @@
 
 @section('content')
     <!-- Nav tabs -->
-    <ul class="nav nav-tabs">
+            <ul class="nav nav-tabs">
                 <li class="active"><a href="#home" data-toggle="tab"><span class="glyphicon glyphicon-inbox">
-                </span>Primary</a></li>
-                <li><a href="#profile" data-toggle="tab"><span class="glyphicon glyphicon-user"></span>
-                    Social</a></li>
-                <li><a href="#messages" data-toggle="tab"><span class="glyphicon glyphicon-tags"></span>
-                    Promotions</a></li>
-                <li><a href="#settings" data-toggle="tab"><span class="glyphicon glyphicon-plus no-margin">
-                </span></a></li>
+                </span>Inbox</a></li>
+                <li><a href="#profile" data-toggle="tab"><span class="glyphicon glyphicon-check"></span>
+                    Concluídos</a></li>
             </ul>
             <!-- Tab panes -->
             <div class="tab-content">
@@ -38,7 +34,7 @@
                 <div class="tab-pane fade in" id="profile">
                     <div class="list-group">
                         <div class="list-group-item">
-                            <span class="text-center">This tab is empty.</span>
+                            <span class="text-center">Sem registros.</span>
                         </div>
                     </div>
                 </div>
