@@ -1,3 +1,16 @@
+var nextStep = function (step, bool) {
+    var approved = bool;
+    var denied = !approved;
+    $.ajax({
+        url: '/api/step_actions/',
+        type: 'POST',
+        data: "type=Refund&step=" + step + "&id=" + id + "&is_approved=" + Number(approved) + "&is_denied=" + Number(denied),
+        success: function(data) {
+            window.location.href = '/inbox';
+        }
+    });
+};
+
 $('#btn-aprovar').on('click', function () {
     console.log('Aprovar');
     var next_step = $(this).data('next_step');
@@ -7,7 +20,7 @@ $('#btn-aprovar').on('click', function () {
             type: 'PUT',
             data: "step_id=" + next_step,
             success: function() {
-                window.location.href = '/inbox';
+                nextStep(next_step, true);
             }
         });
     } else {
@@ -17,7 +30,7 @@ $('#btn-aprovar').on('click', function () {
 })
 
 $('#btn-reprovar').on('click', function () {
-    console.log('reprovar');
+    console.log('Reprovar');
     var next_step = 3;
     if (next_step !== '') {
         $.ajax({
@@ -25,7 +38,7 @@ $('#btn-reprovar').on('click', function () {
             type: 'PUT',
             data: "step_id=" + next_step,
             success: function() {
-                window.location.href = '/inbox';
+                nextStep(next_step, false);
             }
         });
     } else {

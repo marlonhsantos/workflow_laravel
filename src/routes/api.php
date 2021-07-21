@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WorkflowController;
 use App\Http\Controllers\StepController;
+use App\Http\Controllers\StepActionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,5 +22,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::apiResource('workflows', WorkflowController::class);
-
 Route::apiResource('steps', StepController::class);
+Route::post('step_actions', [StepActionController::class, 'index']);
