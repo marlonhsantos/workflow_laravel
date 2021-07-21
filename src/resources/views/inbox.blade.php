@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title', 'Reembolsos')
+@section('title', 'Fluxos de Aprovação de Reembolso')
 
 @section('content')
     <!-- Nav tabs -->

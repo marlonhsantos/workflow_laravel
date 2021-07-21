@@ -1,7 +1,6 @@
 @extends('layouts.main')
 
-@section('title', 'Reembolsos')
+@section('title', 'Bem-Vindo')
 
 @section('content')
-    <h2>Bem-Vindo</h2>
 @endsection

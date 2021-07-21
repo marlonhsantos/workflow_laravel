@@ -4,4 +4,8 @@ $(document).ready(function () {
         event.preventDefault(); 
         $('#logout_form').submit();
     });
+
+    $.getJSON('/api/workflows/', function (data) {
+        $('#count_workflows').html(data.length);
+    });
 });
