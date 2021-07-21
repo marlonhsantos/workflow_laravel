@@ -1,3 +1,10 @@
+@guest
+<script type="text/javascript">
+document.write('Você está sendo redirecionado...');
+location.href = '/login'
+</script>
+@endguest
+@auth
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -84,6 +91,11 @@
                 </li>
                 <li><a href="#">Usuários</a></li>
                 <li><a href="/refunds">Solicitações</a></li>
+                <li><a href="/logout" id="logout_link">Sair</a>
+                    <form action="/logout" method="POST" id="logout_form">
+                    @csrf
+                    </form>
+                </li>
             </ul>
         </div>
         <div class="col-sm-9 col-md-10">
@@ -99,3 +111,4 @@
 <script type="text/javascript" src="/js/main.js"></script>
 </body>
 </html>
+@endauth
