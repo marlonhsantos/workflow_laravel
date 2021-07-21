@@ -1,6 +1,8 @@
-# Projeto "Workflow de aprovação de documentos"
+# Projeto "Workflow de aprovação de Reembolsos" (W.I.P.)
+Implementação de workflows através de solicitações via formulário. Implementação inicial de "Fluxo de Solicitação de Reembolso".
+Inicialmente pensado para servir exclusivamente como Solicitação de Reembolso, o sistema está sendo construído para permitir a criação de diversos fluxos distintos através de parametrizações.
 ## Informações Gerais
-O projeto foi desenvolvido utilizando as seguintes tecnologias e metodologias:
+O projeto está sendo desenvolvido utilizando as seguintes tecnologias e metodologias:
 
  - PHP
  - Framework Laravel
@@ -14,6 +16,6 @@ O projeto foi desenvolvido utilizando as seguintes tecnologias e metodologias:
 - Download do Repositório
 - Build do Docker: docker-compose up -d --build
 - Build do Laravel: docker-compose run composer create-project --prefer-dist laravel/laravel
-- Para instalar a autenticação com jetstream livewire foi necessário instalar o composer (globalmente) no container do php e executar pelo bash (Mais informações em breve)
 - Executar as migrations: docker-compose run artisan migrate
+- Executar as seeders: docker-compose run artisan db:seed --class=StepSeeder
 ### Obrigado!
