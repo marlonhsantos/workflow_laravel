@@ -1,4 +1,3 @@
-
 # Projeto "Workflow de aprovação de documentos"
 ## Informações Gerais
 O projeto foi desenvolvido utilizando as seguintes tecnologias e metodologias:
@@ -18,4 +17,3 @@ O projeto foi desenvolvido utilizando as seguintes tecnologias e metodologias:
 - Para instalar a autenticação com jetstream livewire foi necessário instalar o composer (globalmente) no container do php e executar pelo bash (Mais informações em breve)
 - Executar as migrations: docker-compose run artisan migrate
 ### Obrigado!
-
