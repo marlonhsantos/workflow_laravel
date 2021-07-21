@@ -1,7 +1,7 @@
 @guest
 <script type="text/javascript">
-document.write('Você está sendo redirecionado...');
-location.href = '/login'
+    document.write('Você está sendo redirecionado...');
+    location.href = '/login';
 </script>
 @endguest
 @auth
@@ -49,27 +49,13 @@ location.href = '/login'
                     <span class="caret"></span><span class="sr-only">Toggle Dropdown</span>
                 </button>
                 <ul class="dropdown-menu" role="menu">
-                    <li><a href="#">All</a></li>
-                    <li><a href="#">None</a></li>
-                    <li><a href="#">Read</a></li>
-                    <li><a href="#">Unread</a></li>
-                    <li><a href="#">Starred</a></li>
-                    <li><a href="#">Unstarred</a></li>
+                    <li><a href="#">Aprovados</a></li>
+                    <li><a href="#">Negados</a></li>
+                    <li><a href="#">Aguardando Aprovação</a></li>
                 </ul>
             </div>
             <button type="button" class="btn btn-default" data-toggle="tooltip" title="Refresh">
                 &nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-refresh"></span>&nbsp;&nbsp;&nbsp;</button>
-            <!-- Single button -->
-            <div class="btn-group">
-                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                    More <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu" role="menu">
-                    <li><a href="#">Mark all as read</a></li>
-                    <li class="divider"></li>
-                    <li class="text-center"><small class="text-muted">Select messages to see more actions</small></li>
-                </ul>
-            </div>
             <div class="pull-right">
                 <span class="text-muted"><b>1</b>–<b>50</b> of <b>160</b></span>
                 <div class="btn-group btn-group-sm">
@@ -87,9 +73,9 @@ location.href = '/login'
     <div class="row">
         <div class="col-sm-3 col-md-2">
             <ul class="nav nav-pills nav-stacked">
-                <li class="active"><a href="/inbox"><span class="badge pull-right">32</span> Inbox </a>
+                <li class="active"><a href="/inbox"><span class="badge pull-right" id="count_workflows">--</span> Inbox </a>
                 </li>
-                <li><a href="#">Usuários</a></li>
+                {{-- <li><a href="#">Usuários</a></li> --}}
                 <li><a href="/refunds">Solicitações</a></li>
                 <li><a href="/logout" id="logout_link">Sair</a>
                     <form action="/logout" method="POST" id="logout_form">
