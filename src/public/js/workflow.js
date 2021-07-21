@@ -35,10 +35,16 @@ $('#btn-reprovar').on('click', function () {
 
 
 $(document).ready(function () {
+    var obj;
     $.getJSON('/api/workflows/' + id, function (data) {
-        $('#description').html(data[0].refund.description);
-        $('#value').html(data[0].refund.value);
-        $('#requester_name').html(data[0].refund.requester_name);
-        $('#btn-aprovar').data('next_step', data[0].step.next_step_id);
+        obj = data[0];
+        $('#description').html(obj.refund.description);
+        $('#value').html(obj.refund.value);
+        $('#requester_name').html(obj.refund.requester_name);
+        $('#btn-aprovar').data('next_step', obj.step.next_step_id);
+        if (obj.step.end == 1) {
+            $('#btn-aprovar').hide();
+            $('#btn-reprovar').hide();
+        }
     });
 });

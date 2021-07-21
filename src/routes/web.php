@@ -26,5 +26,5 @@ Route::get('/inbox', [InboxController::class, 'index']);
 Route::get('/workflow/{id}', [InboxController::class, 'workflow']);
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
+    return view('welcome');
 })->name('dashboard');

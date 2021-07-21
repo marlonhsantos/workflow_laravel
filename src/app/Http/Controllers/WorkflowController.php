@@ -15,7 +15,7 @@ class WorkflowController extends Controller
      */
     public function index()
     {
-        $workflows = Workflow::all();
+        $workflows = Workflow::with(['refund','step'])->get();
         return response()->json($workflows, Response::HTTP_OK);
     }
 

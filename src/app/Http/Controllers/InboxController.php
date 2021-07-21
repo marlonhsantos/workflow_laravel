@@ -9,8 +9,7 @@ use App\Models\Workflow;
 class InboxController extends Controller
 {
     public function index(){
-        $workflows = Workflow::with(['refund'])->get();
-        return view('inbox', ['workflows' => $workflows]);
+        return view('inbox');
     }
 
     public function workflow($id){
